@@ -1,5 +1,4 @@
 FROM debian:jessie
-MAINTAINER alimguzhin@di.uniroma1.it
 
 COPY *.sh /build/
 
