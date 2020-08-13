@@ -1,4 +1,4 @@
-BUILD_PKGS="gcc g++ gfortran make omniorb omniidl libomniorb4-dev git autoconf automake libtool cmake default-jre-headless gettext libexpat-dev libblas-dev liblapack-dev liblpsolve55-dev libreadline-dev libncurses5-dev libqt4-dev libsundials-serial-dev python-pip"
+BUILD_PKGS="gcc g++ gfortran make omniorb omniidl libomniorb4-dev git autoconf automake libtool cmake default-jre-headless gettext libexpat-dev libblas-dev liblapack-dev liblpsolve55-dev libreadline-dev libncurses5-dev libcurl-dev libqt4-dev libsundials-serial-dev python-pip"
 RUNTIME_PKGS="gcc make omniorb omniidl liblapack-dev libblas-dev libncurses5 python-omniorb libsundials-serial"
 
 apt-get update && apt-get install -y ${BUILD_PKGS}
@@ -18,7 +18,7 @@ git submodule update --force --init --recursive
 
 autoconf && ./configure --prefix=/usr --disable-modelica3d --with-omniORB=/usr && make && make install && pip install OMPython
 
-apt-get remove --purge -y ${BUILD_PKGS} $(apt-mark showauto)
+#apt-get remove --purge -y ${BUILD_PKGS} $(apt-mark showauto)
 
 apt-get install -y ${RUNTIME_PKGS}
 
